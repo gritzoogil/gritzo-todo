@@ -1,0 +1,220 @@
+:root {
+    --main-white: #f0f0f0;
+    --main-blue: rgba(21,25,40,255);
+    --main-cyan: #0ef;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition-duration: 300ms;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 22px;
+    background: var(--main-blue);
+    color: var(--main-white);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+header,
+main,
+footer {
+    width: 800px;
+    max-width: 100vw;
+    margin: 0 auto;
+}
+
+header {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    opacity: 0;
+    animation: slideBottom 200ms ease forwards;
+    animation-delay: calc(200ms * var(--i));
+}
+
+.logo p {
+    font-family: 'Comic Sans MS';
+}
+
+.plus {
+    opacity: 0;
+    animation: slideBottom 200ms ease forwards;
+    animation-delay: calc(200ms * var(--i));
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1;
+}
+
+.plusIcon {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.plusIcon:hover {
+    color: var(--main-cyan);
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+#enterTo-do {
+    display: none;
+}
+
+#enterTo-do input {
+    background: transparent;
+    outline: none;
+    padding: 12px;
+    color: var(--main-white);
+    flex: 1;
+    border: none;
+    font-size: 22px;
+}
+
+#enterTo-do form {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--main-cyan);
+    position: relative;
+    opacity: 0;
+    animation: slideLeft 500ms ease forwards;
+}
+
+#enterTo-do form:focus-within {
+    border-color: var(--main-cyan);
+}
+
+#enterTo-do button {
+    background: var(--main-cyan);
+    border: none;
+    outline: none;
+    padding: 0 12px;
+    color: var(--main-blue);
+    font-family: 'Bungee', sans-serif;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+#enterTo-do button:hover {
+    background: var(--dark-blue);
+    color: var(--main-cyan);
+}
+
+#to-dos,
+.to-dos {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.to-dos {
+    opacity: 0;
+    animation: slideTop 500ms ease forwards;
+    animation-delay: calc(200ms * var(--i));
+}
+
+.to-dos .coffee {
+    padding-top: 200px;
+    align-self: center;
+    justify-self: center;
+    font-size: 180px;
+}
+
+.to-do-intro {
+    text-align: center;
+}
+
+.todoItem {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+.todoItem p {
+    flex: 1;
+    opacity: 0;
+    animation: slideTop 500ms ease forwards;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    opacity: 0;
+    animation: slideTop 500ms ease forwards;
+}
+
+.actions i:hover {
+    color: var(--main-cyan);
+    cursor: pointer;
+}
+
+/* ----------ANIMATION---------- */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
